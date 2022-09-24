@@ -1,6 +1,8 @@
 export const INITIAL_STATE = {
+  selectedMovie: null,
   movies: [
     {
+      id: 1,
       Title: "Avatar",
       Year: "2009",
       Rated: "PG-13",
@@ -31,6 +33,7 @@ export const INITIAL_STATE = {
       ],
     },
     {
+      id: 2,
       Title: "I Am Legend",
       Year: "2007",
       Rated: "PG-13",
@@ -62,6 +65,7 @@ export const INITIAL_STATE = {
       ],
     },
     {
+      id: 3,
       Title: "300",
       Year: "2006",
       Rated: "R",
@@ -91,6 +95,7 @@ export const INITIAL_STATE = {
       ],
     },
     {
+      id: 4,
       Title: "The Avengers",
       Year: "2012",
       Rated: "PG-13",
@@ -122,6 +127,7 @@ export const INITIAL_STATE = {
       ],
     },
     {
+      id: 5,
       Title: "The Wolf of Wall Street",
       Year: "2013",
       Rated: "R",
@@ -154,6 +160,7 @@ export const INITIAL_STATE = {
       ],
     },
     {
+      id: 6,
       Title: "Interstellar",
       Year: "2014",
       Rated: "PG-13",
@@ -184,6 +191,7 @@ export const INITIAL_STATE = {
       ],
     },
     {
+      id: 7,
       Title: "Gotham",
       Year: "2014-",
       Rated: "TV-14",
@@ -217,6 +225,7 @@ export const INITIAL_STATE = {
       ],
     },
     {
+      id: 8,
       ComingSoon: true,
       Title: "Rogue One: A Star Wars Story",
       Year: "2016",
@@ -249,6 +258,7 @@ export const INITIAL_STATE = {
       ],
     },
     {
+      id: 9,
       ComingSoon: true,
       Title: "Assassin's Creed",
       Year: "2016",
@@ -281,6 +291,7 @@ export const INITIAL_STATE = {
       ],
     },
     {
+      id: 10,
       ComingSoon: true,
       Title: "Luke Cage",
       Year: "2016-",
@@ -313,6 +324,7 @@ export const INITIAL_STATE = {
       ],
     },
     {
+      id: 11,
       Title: "Breaking Bad",
       Year: "2008-2013",
       Rated: "TV-14",
@@ -345,6 +357,7 @@ export const INITIAL_STATE = {
       ],
     },
     {
+      id: 12,
       ComingSoon: true,
       Title: "Doctor Strange",
       Year: "2016",
@@ -387,8 +400,11 @@ export const appReducer = (state, action) => {
         movies: [],
       };
 
-    case "SEARCH_MOVIE":
-      break;
+    case "SET_SELECTED_MOVIE":
+      return {
+        ...state,
+        selectedMovie: { ...action.payload },
+      };
 
     default:
       break;

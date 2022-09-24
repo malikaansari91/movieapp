@@ -6,11 +6,11 @@ import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { CardActionArea } from "@mui/material";
 
-export const MovieCard = ({ movie }) => {
+export const MovieCard = ({ movie, onClick }) => {
   return (
     <Grid item xs={6} sm={6} md={4} lg={3}>
       <Card>
-        <CardActionArea>
+        <CardActionArea onClick={() => onClick(movie)}>
           <CardMedia
             component="img"
             height="160"

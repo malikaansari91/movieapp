@@ -1,1 +1,0 @@
-export { MovieCardDetails } from "./MovieCardDetails";
