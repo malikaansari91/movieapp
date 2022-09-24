@@ -16,7 +16,7 @@ const routes = [
     key: "router-discover",
     title: "Discover",
     component: <Discover />,
-    path: "/discover",
+    path: "/",
     isEnabled: true,
     icon: Search,
     appendDivider: false,

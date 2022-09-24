@@ -5,6 +5,7 @@ import { useContext } from "react";
 
 import { AppContext } from "../contexts";
 import { MovieCard } from "../components/MovieCard";
+import { MovieCardDetails } from "../components/MovieCardDetails";
 
 export const Discover = () => {
   const { state, dispatch } = useContext(AppContext);
@@ -24,6 +25,10 @@ export const Discover = () => {
           Responsive drawer
         </Typography>
       </Toolbar>
+      {/* 
+      <Grid container spacing={3}>
+        <MovieCardDetails movie={state.movies[0]} />
+      </Grid> */}
 
       <Grid container spacing={3}>
         {state.movies.map((movie, idx) => {
