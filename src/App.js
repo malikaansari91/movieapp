@@ -1,12 +1,10 @@
 import { useMemo, useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import logo from "./logo.svg";
 import "./App.css";
-import { ThemeProvider, createTheme } from "@mui/material/styles";
+import { ThemeProvider } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 import { AppContextProvider, ThemeModeContext } from "./contexts";
 import { getAppTheme } from "./styles/theme";
-import { Button } from "@mui/material";
 import { routes } from "./config";
 import { Layout } from "./components/Layout/Layout";
 

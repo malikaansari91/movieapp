@@ -1,23 +1,12 @@
 import { Search } from "@mui/icons-material";
-import {
-  AppBar,
-  IconButton,
-  styled,
-  Toolbar,
-  Box,
-  Typography,
-  Paper,
-  Grid,
-} from "@mui/material";
+import { IconButton, Toolbar, Typography, Grid } from "@mui/material";
 import { Container } from "@mui/system";
 import { useContext } from "react";
-import { useTheme } from "@mui/material/styles";
 
 import { AppContext } from "../contexts";
 import { MovieCard } from "../components/MovieCard";
 
 export const Discover = () => {
-  const theme = useTheme();
   const { state, dispatch } = useContext(AppContext);
   console.log(state, dispatch);
   return (
@@ -44,24 +33,3 @@ export const Discover = () => {
     </Container>
   );
 };
-
-const LogoWrapper = styled("div")`
-  text-align: center;
-  margin-top: 6rem;
-`;
-
-const StyledLogo = styled("img")`
-  height: 40vmin;
-  pointer-events: none;
-  @media (prefers-reduced-motion: no-preference) {
-    animation: App-logo-spin infinite 15s linear;
-  }
-  @keyframes App-logo-spin {
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(360deg);
-    }
-  }
-`;
