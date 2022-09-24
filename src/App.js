@@ -4,7 +4,7 @@ import logo from "./logo.svg";
 import "./App.css";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
-import { ThemeModeContext } from "./contexts.js";
+import { AppContextProvider, ThemeModeContext } from "./contexts";
 import { getAppTheme } from "./styles/theme";
 import { Button } from "@mui/material";
 import { routes } from "./config";
@@ -34,21 +34,18 @@ function App() {
   );
 
   return (
-    <ThemeModeContext.Provider value={themeMode}>
-      <ThemeProvider theme={theme}>
-        <Router>
-          <Layout>
-            <Routes>
-              {routes.map((route) =>
-                route.subRoutes
-                  ? route.subRoutes.map((item) => addRoute(item))
-                  : addRoute(route)
-              )}
-            </Routes>
-          </Layout>
-        </Router>
-      </ThemeProvider>
-    </ThemeModeContext.Provider>
+    <AppContextProvider>
+      <ThemeModeContext.Provider value={themeMode}>
+        <ThemeProvider theme={theme}>
+          <CssBaseline />
+          <Router>
+            <Layout>
+              <Routes>{routes.map((route) => addRoute(route))}</Routes>
+            </Layout>
+          </Router>
+        </ThemeProvider>
+      </ThemeModeContext.Provider>
+    </AppContextProvider>
   );
 }
 

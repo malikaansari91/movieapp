@@ -9,12 +9,13 @@ import {
   SettingsOutlined,
   UpdateOutlined,
 } from "@mui/icons-material";
+import { Discover } from "../pages/Discover";
 
 const routes = [
   {
     key: "router-discover",
     title: "Discover",
-    component: <div>malia</div>,
+    component: <Discover />,
     path: "/discover",
     isEnabled: true,
     icon: Search,

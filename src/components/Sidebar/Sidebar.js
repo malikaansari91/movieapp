@@ -45,7 +45,7 @@ export const Sidebar = (props) => {
       <Drawer
         container={container}
         variant="temporary"
-        open={true || mobileOpen}
+        open={mobileOpen}
         onClose={handleDrawerToggle}
         ModalProps={{
           keepMounted: true,
