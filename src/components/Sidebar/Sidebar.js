@@ -5,15 +5,16 @@ import Drawer from "@mui/material/Drawer";
 import { Routes } from "./Routes";
 import { UserInfo } from "./UserInfo";
 import { Container } from "@mui/system";
+import { AppContext } from "../../contexts";
 
 const drawerWidth = 240;
 
 export const Sidebar = (props) => {
   const { window } = props;
-  const [mobileOpen, setMobileOpen] = React.useState(false);
+  const { state, dispatch } = React.useContext(AppContext);
 
   const handleDrawerToggle = () => {
-    setMobileOpen(!mobileOpen);
+    dispatch({ type: "TOGGLE_SIDEBAR", payload: false });
   };
 
   const renderDawerContent = (
@@ -35,7 +36,7 @@ export const Sidebar = (props) => {
       <Drawer
         container={container}
         variant="temporary"
-        open={mobileOpen}
+        open={state.isSidebarOpen}
         onClose={handleDrawerToggle}
         ModalProps={{
           keepMounted: true,

@@ -6,23 +6,46 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { styled } from "@mui/system";
+import { motion } from "framer-motion";
+import { blueGrey } from "@mui/material/colors";
 
 export const MovieCardDetails = ({ movie }) => {
   return (
-    <Grid item xs={12}>
+    <Grid
+      item
+      xs={12}
+      component={motion.div}
+      initial={{ height: 0 }}
+      animate={{ height: "405px" }}
+      transition={{ type: "spring", duration: 1, delay: 0 }}
+    >
       <Card
         sx={{
           display: "flex",
           flexDirection: { xs: "column", sm: "column", md: "row" },
-          height: "300px",
+          height: "390px",
+          background: blueGrey[800],
+          padding: 1,
         }}
+        component={motion.div}
+        initial={{ visibility: "hidden", transform: "scaleY(0)" }}
+        animate={{
+          visibility: "visible",
+          transform: "scaleY(1)",
+        }}
+        transition={{ type: "spring", duration: 1, delay: 0.5 }}
       >
-        <CardMedia
-          component="img"
-          sx={{ flexBasis: "40%" }}
-          image={movie.Poster}
-          alt="Live from space album cover"
-        />
+        <div style={{ position: "relative", overflow: "hidden" }}>
+          <div style={{ paddingBottom: "calc(1.32821 * 100%)" }}>
+            <CardMedia
+              component="img"
+              sx={{ flexBasis: "40%" }}
+              image={movie.Poster}
+              alt="Live from space album cover"
+            />
+          </div>
+        </div>
+
         <Box sx={{ display: "flex", flexDirection: "column" }}>
           <CardContent sx={{ flex: "1 0 auto" }}>
             <Typography component="div" variant="h4">

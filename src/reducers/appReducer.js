@@ -1,5 +1,6 @@
 export const INITIAL_STATE = {
   selectedMovie: null,
+  isSidebarOpen: false,
   movies: [
     {
       id: 1,
@@ -30,38 +31,6 @@ export const INITIAL_STATE = {
         "https://images-na.ssl-images-amazon.com/images/M/MV5BMTY2ODQ3NjMyMl5BMl5BanBnXkFtZTcwODg0MTUzNA@@._V1_SX1777_CR0,0,1777,999_AL_.jpg",
         "https://images-na.ssl-images-amazon.com/images/M/MV5BMTMxOTEwNDcxN15BMl5BanBnXkFtZTcwOTg0MTUzNA@@._V1_SX1777_CR0,0,1777,999_AL_.jpg",
         "https://images-na.ssl-images-amazon.com/images/M/MV5BMTYxMDg1Nzk1MV5BMl5BanBnXkFtZTcwMDk0MTUzNA@@._V1_SX1500_CR0,0,1500,999_AL_.jpg",
-      ],
-    },
-    {
-      id: 2,
-      Title: "I Am Legend",
-      Year: "2007",
-      Rated: "PG-13",
-      Released: "14 Dec 2007",
-      Runtime: "101 min",
-      Genre: "Drama, Horror, Sci-Fi",
-      Director: "Francis Lawrence",
-      Writer:
-        "Mark Protosevich (screenplay), Akiva Goldsman (screenplay), Richard Matheson (novel), John William Corrington, Joyce Hooper Corrington",
-      Actors:
-        "Will Smith, Alice Braga, Charlie Tahan, Salli Richardson-Whitfield",
-      Plot: "Years after a plague kills most of humanity and transforms the rest nto monsters, the sole survivor in New York City struggles valiantly to find acure.",
-      Language: "English",
-      Country: "USA",
-      Awards: "9 wins & 21 nominations.",
-      Poster:
-        "https://images-na.ssl-images-amazon.com/images/S/pv-target-images/d0688a1d44131c7239999cad2ceeec122383367b38450c4f0d005127442d7d94._RI_V_TTW_.jpg",
-      Metascore: "65",
-      imdbRating: "7.2",
-      imdbVotes: "533,874",
-      imdbID: "tt0480249",
-      Type: "movie",
-      Response: "True",
-      Images: [
-        "https://images-na.ssl-images-amazon.com/images/M/MV5BMTI0NTI4NjE3NV5BMl5BanBnXkFtZTYwMDA0Nzc4._V1_.jpg",
-        "https://images-na.ssl-images-amazon.com/images/M/MV5BMTIwMDg2MDU4M15BMl5BanBnXkFtZTYwMTA0Nzc4._V1_.jpg",
-        "https://images-na.ssl-images-amazon.com/images/M/MV5BMTc5MDM1OTU5OV5BMl5BanBnXkFtZTYwMjA0Nzc4._V1_.jpg",
-        "https://images-na.ssl-images-amazon.com/images/M/MV5BMTA0MTI2NjMzMzFeQTJeQWpwZ15BbWU2MDMwNDc3OA@@._V1_.jpg",
       ],
     },
     {
@@ -404,6 +373,13 @@ export const appReducer = (state, action) => {
       return {
         ...state,
         selectedMovie: { ...action.payload },
+      };
+
+    case "TOGGLE_SIDEBAR":
+      console.log("action", action);
+      return {
+        ...state,
+        isSidebarOpen: action.payload,
       };
 
     default:

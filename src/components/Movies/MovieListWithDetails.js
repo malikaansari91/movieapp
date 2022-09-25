@@ -12,7 +12,7 @@ export const MovieListWithDetailCard = ({
     dispatch({ type: "SET_SELECTED_MOVIE", payload });
   };
   return (
-    <Grid container spacing={3}>
+    <Grid container spacing={2}>
       {showDetails && <MovieCardDetails movie={selectedMovie} />}
       {movies.map((movie, idx) => {
         return <MovieCard key={idx} movie={movie} onClick={handleMovieClick} />;

@@ -1,15 +1,13 @@
-import { useState } from "react";
+import { useContext, useReducer, useState } from "react";
 import { styled, Box } from "@mui/material";
 import { Sidebar } from "../Sidebar";
+import { AppContext } from "../../contexts";
 
 export const Layout = ({ children }) => {
-  const [open, setOpen] = useState(false);
-  const toggleNavigation = () => setOpen((status) => !status);
-
   return (
     <LayoutWrapper>
       <ContentWrapper>
-        <Sidebar open={open} handleClose={toggleNavigation} />
+        <Sidebar />
         <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
           {children}
         </Box>
