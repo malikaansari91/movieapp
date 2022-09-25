@@ -49,6 +49,12 @@ export const MovieCardDetails = ({ movie }) => {
             overflow: "hidden",
             width: { xs: "100%", sm: "300px" },
           }}
+          component={motion.div}
+          initial={{ opacity: 0 }}
+          animate={{
+            opacity: 1,
+          }}
+          transition={{ type: "spring", duration: 1, delay: 1 }}
         >
           <Box sx={{ paddingBottom: { xs: "150%", sm: "170%" } }}>
             <CardMedia
@@ -67,7 +73,15 @@ export const MovieCardDetails = ({ movie }) => {
           </Box>
         </Box>
 
-        <Box sx={{ display: "flex", flexDirection: "column", flex: 1 }}>
+        <Box
+          sx={{ display: "flex", flexDirection: "column", flex: 1 }}
+          component={motion.div}
+          initial={{ opacity: 0 }}
+          animate={{
+            opacity: 1,
+          }}
+          transition={{ type: "spring", duration: 1, delay: 1 }}
+        >
           <CardContent sx={{ flex: "1 0 auto" }}>
             <Stack direction="column" spacing={1}>
               <Typography
