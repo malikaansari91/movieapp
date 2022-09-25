@@ -30,11 +30,18 @@ export const Discover = () => {
     state.movies,
     getMovieTilePerRow(width)
   );
+  console.log("movieArr", movieArr);
   const [showInput, setShowInput] = useState(false);
 
   const variants = {
     start: { width: "250px", background: theme.palette.background.paper },
     stop: { width: "50px" },
+  };
+
+  const searchMovies = (e) => {
+    const keyword = e.target.value;
+
+    dispatch({ type: "SEARCH_MOVIES", payload: keyword });
   };
 
   const topbar = (
@@ -68,6 +75,7 @@ export const Discover = () => {
               <StyledInputBase
                 placeholder="Title, Movies, Keyword"
                 inputProps={{ "aria-label": "search" }}
+                onChange={searchMovies}
               />
             </Search>
           </Stack>
@@ -88,6 +96,13 @@ export const Discover = () => {
       }}
     >
       {topbar}
+
+      {state.movies.length === 0 ? (
+        <Typography variant="h6" component="div">
+          No results found for your search
+        </Typography>
+      ) : null}
+
       {movieArr.map((list, idx) => {
         return (
           <MovieListWithDetails

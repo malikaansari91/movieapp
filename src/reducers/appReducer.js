@@ -363,12 +363,6 @@ export const INITIAL_STATE = {
 
 export const appReducer = (state, action) => {
   switch (action.type) {
-    case "SEARCH_MOVIES":
-      return {
-        ...state,
-        movies: [],
-      };
-
     case "SET_SELECTED_MOVIE":
       return {
         ...state,
@@ -380,6 +374,22 @@ export const appReducer = (state, action) => {
       return {
         ...state,
         isSidebarOpen: action.payload,
+      };
+    case "SEARCH_MOVIES":
+      let results = [...state.movies];
+      if (action.payload !== "") {
+        results = state.movies.filter((movie) => {
+          return movie.Title.toLowerCase().startsWith(
+            action.payload.toLowerCase()
+          );
+        });
+      } else {
+        results = [...INITIAL_STATE.movies];
+      }
+
+      return {
+        ...state,
+        movies: [...results],
       };
 
     default:

@@ -45,7 +45,7 @@ export const MovieCard = ({ movie, onClick }) => {
             </Box>
           </Box>
           <CardContent>
-            <Typography gutterBottom variant="h7" component="div">
+            <Typography gutterBottom component="div">
               {movie.Title}
             </Typography>
             <Stack direction="row" spacing={0.1}>
