@@ -18,8 +18,16 @@ export const Routes = () => {
   const RouteItem = ({ key, route, nested }) => {
     const isSelected = location.pathname === route.path;
 
+    const handleNavigate = (e) => {
+      if (!route.isEnabled) e.preventDefault();
+    };
+
     return (
-      <StyledNavLink to={`${route.path}`} key={route.key}>
+      <StyledNavLink
+        to={`${route.path}`}
+        key={route.key}
+        onClick={handleNavigate}
+      >
         <StyledListItemButton
           isEnabled={route.isEnabled}
           sx={{ pl: nested ? 3 : 1 }}
