@@ -10,7 +10,13 @@ import { styled } from "@mui/system";
 export const MovieCardDetails = ({ movie }) => {
   return (
     <Grid item xs={12}>
-      <Card sx={{ display: "flex", height: "300px" }}>
+      <Card
+        sx={{
+          display: "flex",
+          flexDirection: { xs: "column", sm: "column", md: "row" },
+          height: "300px",
+        }}
+      >
         <CardMedia
           component="img"
           sx={{ flexBasis: "40%" }}

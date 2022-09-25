@@ -1,8 +1,8 @@
-import * as React from "react";
+import React from "react";
 import { Grid } from "@mui/material";
 import { MovieCard, MovieCardDetails } from ".";
 
-export const MovieListWithDetails = ({
+export const MovieListWithDetailCard = ({
   movies,
   selectedMovie,
   dispatch,
@@ -20,3 +20,5 @@ export const MovieListWithDetails = ({
     </Grid>
   );
 };
+
+export const MovieListWithDetails = React.memo(MovieListWithDetailCard);

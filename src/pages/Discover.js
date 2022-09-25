@@ -1,5 +1,5 @@
 import { Search } from "@mui/icons-material";
-import { IconButton, Toolbar, Typography } from "@mui/material";
+import { IconButton, Stack, Toolbar, Typography } from "@mui/material";
 import { Container } from "@mui/system";
 import { useContext } from "react";
 
