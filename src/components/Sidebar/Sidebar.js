@@ -4,8 +4,9 @@ import Box from "@mui/material/Box";
 import Drawer from "@mui/material/Drawer";
 import { Routes } from "./Routes";
 import { UserInfo } from "./UserInfo";
-import { Container } from "@mui/system";
+import { Container, Stack } from "@mui/system";
 import { AppContext } from "../../contexts";
+import { Divider } from "@mui/material";
 
 const drawerWidth = 240;
 
@@ -19,8 +20,11 @@ export const Sidebar = (props) => {
 
   const renderDawerContent = (
     <Container>
-      <UserInfo />
-      <Routes />
+      <Stack spacing={2}>
+        <UserInfo />
+        <Divider />
+        <Routes />
+      </Stack>
     </Container>
   );
 
