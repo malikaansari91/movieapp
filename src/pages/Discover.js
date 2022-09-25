@@ -32,7 +32,7 @@ export const Discover = () => {
   const [showInput, setShowInput] = useState(false);
 
   const variants = {
-    start: { width: "250px", background: theme.palette.background.paper },
+    start: { width: "60%", background: theme.palette.background.paper },
     stop: { width: "50px" },
   };
 
@@ -49,7 +49,7 @@ export const Discover = () => {
         position="static"
       >
         <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
-          <Stack direction="row" spacing={1}>
+          <Box sx={{ flex: 1, display: "flex" }}>
             <IconButton
               color="inherit"
               aria-label="open drawer"
@@ -57,7 +57,7 @@ export const Discover = () => {
               onClick={() =>
                 dispatch({ type: "TOGGLE_SIDEBAR", payload: true })
               }
-              sx={{ mr: 2, display: { sm: "none" } }}
+              sx={{ mr: 1, display: { sm: "none" } }}
             >
               <MenuIcon />
             </IconButton>
@@ -76,7 +76,7 @@ export const Discover = () => {
                 onChange={searchMovies}
               />
             </Search>
-          </Stack>
+          </Box>
 
           <Stack direction="row" spacing={2}>
             <WbSunnyOutlined />
@@ -90,17 +90,16 @@ export const Discover = () => {
   return (
     <Container
       sx={{
-        paddingleft: { sm: 0 },
+        paddingLeft: { xs: 0.5, sm: 2 },
+        paddingRight: { xs: 0.5, sm: 2 },
       }}
     >
       {topbar}
-
       {state.movies.length === 0 ? (
         <Typography variant="h6" component="div">
           No results found for your search
         </Typography>
       ) : null}
-
       {movieArr.map((list, idx) => {
         return (
           <MovieListWithDetails

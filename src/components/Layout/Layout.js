@@ -6,7 +6,7 @@ export const Layout = ({ children }) => {
     <LayoutWrapper>
       <ContentWrapper>
         <Sidebar />
-        <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
+        <Box component="main" sx={{ flexGrow: 1, p: { xs: 1, sm: 3 } }}>
           {children}
         </Box>
       </ContentWrapper>
