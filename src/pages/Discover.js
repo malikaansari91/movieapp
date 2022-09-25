@@ -1,10 +1,8 @@
 import {
   AppBar,
   IconButton,
-  InputAdornment,
   InputBase,
   Stack,
-  TextField,
   Toolbar,
   Typography,
 } from "@mui/material";

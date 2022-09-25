@@ -5,13 +5,8 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { CardActionArea } from "@mui/material";
-import {
-  AddCircleOutline,
-  PlayCircleOutline,
-  Search,
-} from "@mui/icons-material";
-import { useTheme } from "@emotion/react";
-import { styled } from "@mui/system";
+import { AddCircleOutline, PlayCircleOutline } from "@mui/icons-material";
+
 import { blueGrey } from "@mui/material/colors";
 
 export const MovieCard = ({ movie, onClick }) => {

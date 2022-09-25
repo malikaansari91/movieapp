@@ -1,7 +1,5 @@
-import { useContext, useReducer, useState } from "react";
 import { styled, Box } from "@mui/material";
 import { Sidebar } from "../Sidebar";
-import { AppContext } from "../../contexts";
 
 export const Layout = ({ children }) => {
   return (
